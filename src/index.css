@@ -23,3 +23,17 @@ code {
 .navPos{
   margin: 0.3vh;
 }
+
+.companyName{
+  font-family: "Times New Roman", Times, serif;
+  font-weight:bold;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  line-height: 1.1;
+}
+
+.opelLogo{
+  content:url('./images/opelLogo.svg');
+  height: 40px;
+  width: 40px;
+}

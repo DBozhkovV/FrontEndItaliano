@@ -21,6 +21,7 @@ const NavbarComponent = () => {
             <FormLogin show = {LogInShow} onHide={() => setLogInShow(false)}/>
           <Nav.Link onClick={() => setSignUpShow(true)}>Sign Up</Nav.Link>
             <FormSignUp show={SignUpShow} onHide={() => setSignUpShow(false)}/>
+            <Nav.Link href="http://127.0.0.1:8000/admin">Manage Cars</Nav.Link>
         </Nav>
         </Navbar.Collapse>
       </Container>

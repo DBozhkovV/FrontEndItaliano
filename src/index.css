@@ -37,3 +37,9 @@ code {
   height: 40px;
   width: 40px;
 }
+
+.text-box{
+  text-align: center;
+  padding: 1rem 1rem;
+  text-transform: uppercase;
+}

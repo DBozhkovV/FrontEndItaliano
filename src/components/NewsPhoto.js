@@ -1,17 +1,14 @@
-import { Parallax } from 'react-parallax';
-import NewsPhoto from '../images/lambo.jpg'
-import React, { createContext, useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import { NewsContextProvider } from "./NewsContext";
 import News from "./News";
 import "./app.css";
 
 const NewsBackground = () => (
-    <Parallax  bgImage={NewsPhoto} strength={800}>
+    <div className='NewsBackground'>
         <NewsContextProvider>
             <News />
         </NewsContextProvider>
-    </Parallax>
+    </div>
 );
 
 export default NewsBackground;

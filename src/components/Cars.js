@@ -8,23 +8,21 @@ const Cars = () => {
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
     let componentMounted = true;
- 
+
     useEffect(() => {
         const getCars = async () => {
             setLoading(true);
-            const response = await fetch('https://fakestoreapi.com/products');
+            const response = await fetch('http://127.0.0.1:8000/dealership/cars/?format=json');
             if(componentMounted){
                 setData(await response.clone().json());
                 setFilter(await response.json());
                 setLoading(false);
                 console.log(filter);
             }
-
             return () => {
                 componentMounted = false;
             }
         }
-
         getCars();
     }, []);
 
@@ -43,35 +41,31 @@ const Cars = () => {
             </>
         )
     }
-/*
+
     const filterProduct = (type) => {
-        const updatedList = data.filter((x)=>x.category === type);
+        const updatedList = data.filter((x)=>x.model === type);
         setFilter(updatedList);
     }
-*/
-    const ShowProducts = () => {
+
+    const ShowCars = () => {
         return(
             <>
-                <div className="buttons d-flex justify-content-center mb-5 pb-5">
-                    {/* <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>All</button> */}
-                    <button className="btn btn-outline-dark me-2">All</button>
-                    {/* <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("electronics")}>Electric</button> */}
-                    <button className="btn btn-outline-dark me-2">Electric</button>
+                <div className="buttons d-flex justify-content-center mb-5 pb-5 ">
+                    <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>All</button> 
+                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("BMW")}>BMW</button>    
                 </div>
-                {filter.map((product)=>{
+                {filter.map((car)=>{
                     return(
-                        <>
-                            <div className="col-md-3 mb-4">    
-                                <div className="card h-100 text-center p-4" key={product.id}>
-                                    <img src={product.image} className="card-img-top" alt={product.title} height="250px"/>
+                            <div className="col-md-3 mb-4" key={car.id}>    
+                                <div className="card h-100 text-center p-4" key={car.id}>
+                                    <img src={car.images[0].image} className="card-img-top" alt={car.make} height="250px"/>
                                     <div className="card-body">
-                                        <h5 className="card-title mb-0">{product.title.substring(0,12)}...</h5>
-                                        <p className="card-text">${product.price}</p>
-                                        <a href="#" className="btn btn-primary">Buy now</a>
+                                        <h5 className="card-title mb-0">{car.model}</h5>
+                                        <p className="card-text">${car.price}</p>
+                                        <a href="#" className="btn btn-primary">More Information</a>
                                     </div>
                                 </div>
                             </div>
-                        </>
                     )
                 })}
             </>
@@ -87,7 +81,7 @@ const Cars = () => {
                         <hr/>
                     </div>
                     <div className="row justify-content-center">
-                        {loading ? <Loading/> : <ShowProducts/>}
+                        {loading ? <Loading/> : <ShowCars/>}
                     </div>
                 </div>
             </div>

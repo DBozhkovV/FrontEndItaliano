@@ -14,10 +14,18 @@ code {
 
 .Background{
   position: static;
-  height: 100vh;
-  background-size: cover;
+  background: url('./images/bugatti.jpg');
   background-repeat: no-repeat;
-  margin: -0.05vh;
+  padding: 25px;
+  background-size: 100% 100%;
+}
+
+.NewsBackground{
+  position: static;
+  background: url('./images/lambo.jpg');
+  background-repeat: no-repeat;
+  padding: 25px;
+  background-size: 100% 100%;
 }
 
 .navPos{

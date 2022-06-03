@@ -1,18 +1,21 @@
-import React, { useState } from "react";
-import Background from './components/Background.js';
-import NavbarComponent from "./components/Navbar.js";
-import TextBox from "./components/TextBox.js"
-import NewsPhoto from "./components/NewsPhoto"
-import Cars from "./components/Cars.js";
+import React from "react";
+import Car from "./components/pages/Car.js";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './components/pages/Home';
+import NewsPhoto from './components/NewsApi/NewsPhoto';
+import Layout from './components/hocs/Layout';
 
 function App() {
   return (
-    <div className="App">
-      <NavbarComponent/>
-      <Background/>
-      <TextBox/>
-      <NewsPhoto/>
-    </div>
+    <BrowserRouter>
+      <Layout>
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route path="/car/:carId" element={<Car />} />  
+          <Route exact path="/news" element={<NewsPhoto/>} />
+        </Routes>
+      </Layout>
+    </BrowserRouter>
   );
 }
 

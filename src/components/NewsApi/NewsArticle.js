@@ -2,7 +2,6 @@ import React from "react";
 
 function NewsArticle({ data }) {
 
-
   function GoTo (){
     var path = data.url;
     window.location.href = path;

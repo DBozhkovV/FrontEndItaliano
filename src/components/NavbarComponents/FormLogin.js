@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import Modal from "react-bootstrap/Modal";
 import { Button, ModalBody, ModalTitle} from 'react-bootstrap';
 
 function FormSignUp(props){
-    
     return (
         <Modal
             {...props}
@@ -12,12 +11,12 @@ function FormSignUp(props){
         >
             <Modal.Header closeButton>
                 <ModalTitle>
-                    Sign Up
+                    Login
                 </ModalTitle>
             </Modal.Header>
-            <ModalBody className="form-inputs" >
+            <ModalBody className="form-inputs">
                 <label htmlFor="email" className='form-label'>
-                    Email:   
+                    Email:    
                 </label>
                 <input
                     id = 'email'

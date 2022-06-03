@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from "react";
-import Skeleton from 'react-loading-skeleton'
+import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
+import { Link } from 'react-router-dom'
 
 const Cars = () => {
-
     const [data, setData] = useState([]);
     const [filter, setFilter] = useState(data);
     const [loading, setLoading] = useState(false);
@@ -12,12 +12,12 @@ const Cars = () => {
     useEffect(() => {
         const getCars = async () => {
             setLoading(true);
-            const response = await fetch('http://127.0.0.1:8000/dealership/cars/?format=json');
+            const response = await fetch('http://127.0.0.1:8000/dealership/cars/?format=json', {mode: 'cors'});
             if(componentMounted){
                 setData(await response.clone().json());
                 setFilter(await response.json());
                 setLoading(false);
-                console.log(filter);
+                // console.log(filter);
             }
             return () => {
                 componentMounted = false;
@@ -62,7 +62,7 @@ const Cars = () => {
                                     <div className="card-body">
                                         <h5 className="card-title mb-0">{car.model}</h5>
                                         <p className="card-text">${car.price}</p>
-                                        <a href="#" className="btn btn-primary">More Information</a>
+                                        <Link to={`/car/${car.id}`} key={car.id} className="btn btn-outline-dark me-2">More Information</Link>
                                     </div>
                                 </div>
                             </div>

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar,Nav,NavDropdown,Container} from 'react-bootstrap';
+import { Navbar,Nav,Container} from 'react-bootstrap';
 import FormLogin from './FormLogin.js';
 import FormSignUp from './FormSignUp.js';
 
@@ -10,13 +10,14 @@ const NavbarComponent = () => {
   return (
     <Navbar bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand className="companyName" href="#home">
+        <Navbar.Brand className="companyName" href="http://127.0.0.1:3000">
           <img
             className="opelLogo"
           />{' '} Italiano Dealership</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav"> 
         <Nav className="justify-content-end" style={{ width: "100%" }}>
+          <Nav.Link href="http://127.0.0.1:3000/news">News</Nav.Link>
           <Nav.Link onClick={() => setLogInShow(true)}>Login</Nav.Link>
             <FormLogin show = {LogInShow} onHide={() => setLogInShow(false)}/>
           <Nav.Link onClick={() => setSignUpShow(true)}>Sign Up</Nav.Link>

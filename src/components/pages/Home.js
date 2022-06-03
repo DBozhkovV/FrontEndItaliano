@@ -1,10 +1,10 @@
 import React from 'react';
-import Cars from './Cars';
+import Cars from '../CarApi/Cars';
 
-const Bugati = () => (
+const Home = () => (
     <div className='Background'>
         <Cars/>
     </div>
 );
 
-export default Bugati;
+export default Home;

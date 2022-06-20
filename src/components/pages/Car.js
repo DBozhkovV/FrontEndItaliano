@@ -1,10 +1,12 @@
 import React, { useState, useEffect} from "react";
 import { useParams } from "react-router-dom";
 
+
 function Car (props) {
     let params = useParams();
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState();
+
     let componentMounted = true;
 
     useEffect(() => {
@@ -20,12 +22,15 @@ function Car (props) {
         getCars();
     }, []);
 
+    if(!data) return null;
+
     return(
         <div>    
             <div key={data.id}>
-                <div>
+                <div>   
+                    <img src={data.images[0].image} alt="Paris" class="center"/>          
                     <h5>{data.model}</h5>
-                    <p>${data.price}</p>             
+                    <p>${data.price}</p>
                 </div>
             </div>
         </div>

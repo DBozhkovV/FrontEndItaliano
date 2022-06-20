@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css'
 import { Link } from 'react-router-dom'
+import './cars.css'
 
 const Cars = () => {
     const [data, setData] = useState([]);
@@ -43,7 +44,7 @@ const Cars = () => {
     }
 
     const filterProduct = (type) => {
-        const updatedList = data.filter((x)=>x.model === type);
+        const updatedList = data.filter((x)=>x.make === type);
         setFilter(updatedList);
     }
 
@@ -52,13 +53,13 @@ const Cars = () => {
             <>
                 <div className="buttons d-flex justify-content-center mb-5 pb-5 ">
                     <button className="btn btn-outline-dark me-2" onClick={()=>setFilter(data)}>All</button> 
-                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("BMW")}>BMW</button>    
+                    <button className="btn btn-outline-dark me-2" onClick={()=>filterProduct("Audi")}>Audi</button>    
                 </div>
                 {filter.map((car)=>{
                     return(
                             <div className="col-md-3 mb-4" key={car.id}>    
                                 <div className="card h-100 text-center p-4" key={car.id}>
-                                    <img src={car.images[0].image} className="card-img-top" alt={car.make} height="250px"/>
+                                    <img src={car.images[0].image} className="card-img-top" alt={car.make} />
                                     <div className="card-body">
                                         <h5 className="card-title mb-0">{car.model}</h5>
                                         <p className="card-text">${car.price}</p>

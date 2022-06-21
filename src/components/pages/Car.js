@@ -56,7 +56,6 @@ function Car () {
                     <div>
                       <img src={data.images[0].image} alt="" className="img-responsive wc-image"></img>
                     </div>
-
                   </div>
 
                   <div className="col-md-6 col-xs-12">
@@ -125,7 +124,6 @@ function Car () {
                             </div>
                        </li>
 
-
                        <li className="list-group-item">
                             <div className="clearfix">
                                  <span className="pull-left">Description</span>
@@ -136,14 +134,12 @@ function Car () {
 
                     </ul>
 
-
                     </form>
                   </div>
                 </div>
             </div>
         </section>
     </main>
-
 
 
 </div>

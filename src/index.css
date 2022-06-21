@@ -51,10 +51,3 @@ code {
   padding: 1rem 1rem;
   text-transform: uppercase;
 }
-
-carImage{
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}

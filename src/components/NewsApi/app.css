@@ -1,71 +1,76 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: inter;
-    width: 100%;
-    margin: 0 auto;
-    background: rgb(255, 255, 255);
-  }
-  
-  .all__news {
-    
-    margin: 70px auto;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 20px;
-  }
-  
-  .news {
-    margin-left: 25px;
-    background: rgb(255, 255, 255);
-    max-width: 500px;
-    padding: 20px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-  }
-  
-  .news__title {
-    padding-bottom: 10px;
-    border-bottom: 1px solid lightgray;
-  }
-  
-  .head__text {
-    margin-top: 30px;
-  }
-  
-  .news__desc {
-    padding-top: 10px;
-    line-height: 25px;
-    font-size: 14px;
-    padding-bottom: 10px;
-  }
-  
-  .news__author {
-    margin-right: 10px;
-    color: purple;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  .link {
-    margin-right: 10px;
-    color: rgb(0, 23, 128);
-    cursor: pointer;
-  }
+body {
+  font-family: inter;
+  width: 100%;
+  margin: 0 auto;
+  background: rgb(255, 255, 255);
+}
+
+.all__news {
   
-  .news__published {
-    margin-right: 10px;
-  }
-  
-  .news__source,
-  .news__published {
-    display: inline-block;
-    margin-top: 10px;
-    color: rgb(143, 143, 143);
-  }
-  img{
-    height: 300px;
-    width: 450px;
-  }
+  margin: 70px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.news {
+  margin-left: 25px;
+  background: rgb(255, 255, 255);
+  max-width: 500px;
+  padding: 20px;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+}
+
+.news__title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid lightgray;
+}
+
+.head__text {
+  margin-top: 30px;
+}
+
+.news__desc {
+  padding-top: 10px;
+  line-height: 25px;
+  font-size: 14px;
+  padding-bottom: 10px;
+}
+
+.news__author {
+  margin-right: 10px;
+  color: purple;
+}
+
+.link {
+  margin-right: 10px;
+  color: rgb(0, 23, 128);
+  cursor: pointer;
+}
+
+.news__published {
+  margin-right: 10px;
+}
+
+.news__source,
+.news__published {
+  display: inline-block;
+  margin-top: 10px;
+  color: rgb(143, 143, 143);
+}
+.img{
+  height: 300px;
+  width: 450px;
+  margin-left: 0px;
+}
+img{
+  height: 300px;
+  width: 450px;
+}

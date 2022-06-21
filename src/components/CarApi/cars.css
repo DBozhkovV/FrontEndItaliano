@@ -1,4 +1,7 @@
-carImage{
-    height: 1000px;
-    width: 100%;
-  }
+.img {
+  display: block;
+  margin-left: 70%;
+  margin-top: 10%;
+  
+  /* width: 50%; */
+}
